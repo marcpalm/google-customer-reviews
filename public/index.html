@@ -7,15 +7,14 @@
         <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
         <script>
             window.renderOptIn = function() {
+                console.log('click')
                 window.gapi.load('surveyoptin', function() {
                     window.gapi.surveyoptin.render({
                         "merchant_id":"MERCHANT_ID",
-                        "order_id": "ORDER_ID",
+                        "order_id": "1",
                         "email": "CUSTOMER_EMAIL",
                         "delivery_country": "COUNTRY_CODE",
                         "estimated_delivery_date": "YYYY-MM-DD",
-                        "products": [{"gtin":"GTIN1"}, {"gtin":"GTIN2"}],
-                        "opt_in_style": "OPT_IN_STYLE"
                     });
                 });
             }
