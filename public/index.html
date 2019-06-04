@@ -6,7 +6,7 @@
         <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
         <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
         <script>
-            window.renderOptIn = function() {
+            const renderOptIn = () => () => {
                 console.log('click')
                 window.gapi.load('surveyoptin', function() {
                     window.gapi.surveyoptin.render({
