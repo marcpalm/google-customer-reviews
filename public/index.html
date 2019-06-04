@@ -9,7 +9,7 @@
             window.renderOptIn = function() {
                 console.log('click')
                 window.gapi.load('surveyoptin', function() {
-                    document.getElementById('submit').on('click', (event) => {
+                    document.getElementById('submit').onclick = (event) => {
                         const email = document.getElementById('email').value
                         console.log('hi', email)
                         window.gapi.surveyoptin.render({
@@ -19,7 +19,7 @@
                             "delivery_country": "DE",
                             "estimated_delivery_date": new Date().toISOString().substring(0,10),
                         });
-                    })
+                    }
                 });
             }
         </script>
