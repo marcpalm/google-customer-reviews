@@ -13,7 +13,7 @@
                         const email = document.getElementById('email').value
                         console.log('hi', email)
 
-                        if (!email && email.indexOf('@') !== -1) {
+                        if (!email || email.indexOf('@') === -1) {
                             alert('Bitte richtige Email einfügen')
                         } else {
                             window.gapi.surveyoptin.render({
