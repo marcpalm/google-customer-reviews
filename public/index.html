@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Google Customer Reviews Example</title>
-    <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
-  </head>
-  <body>
-    <!-- page content -->
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>Google Customer Reviews Example</title>
+        <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
+        <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+        <script>
+            window.renderOptIn = function() {
+                window.gapi.load('surveyoptin', function() {
+                    window.gapi.surveyoptin.render({
+                        "merchant_id":"MERCHANT_ID",
+                        "order_id": "ORDER_ID",
+                        "email": "CUSTOMER_EMAIL",
+                        "delivery_country": "COUNTRY_CODE",
+                        "estimated_delivery_date": "YYYY-MM-DD",
+                        "products": [{"gtin":"GTIN1"}, {"gtin":"GTIN2"}],
+                        "opt_in_style": "OPT_IN_STYLE"
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <form onSubmit>
+            <input type="text" id="email" placeholder="Email" />
+            <button onclick="window.renderOptIn" value="submit" />
+        </form>
+    </body>
 </html>
