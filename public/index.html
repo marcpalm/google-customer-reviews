@@ -12,13 +12,19 @@
                     document.getElementById('submit').onclick = (event) => {
                         const email = document.getElementById('email').value
                         console.log('hi', email)
-                        window.gapi.surveyoptin.render({
-                            "merchant_id": 136160422,
-                            "order_id": "1",
-                            "email": "palmmarc85@gmail.com",
-                            "delivery_country": "DE",
-                            "estimated_delivery_date": new Date().toISOString().substring(0,10),
-                        });
+
+                        if (!email && email.indexOf('@') !== -1) {
+                            alert('Bitte richtige Email einfügen')
+                        } else {
+                            window.gapi.surveyoptin.render({
+                                "merchant_id": 136160422,
+                                "order_id": "1",
+                                "email": email,
+                                "delivery_country": "DE",
+                                "estimated_delivery_date": new Date().toISOString().substring(0,10),
+                            });
+                        }
+
                     }
                 });
             }
