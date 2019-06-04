@@ -9,7 +9,8 @@
             window.renderOptIn = function() {
                 console.log('click')
                 window.gapi.load('surveyoptin', function() {
-                    window.onFormSubmit = () => {
+                    document.getElementById('submit').onclick = (event) => {
+                        console.log('hi')
                         window.gapi.surveyoptin.render({
                             "merchant_id": 136160422,
                             "order_id": "1",
@@ -36,7 +37,7 @@
     <body>
         <form onSubmit>
             <input type="text" id="email" placeholder="Email" />
-            <input type="button" onclick="window.onFormSubmit" value="submit" />
+            <input type="button" id="submit" value="submit" />
         </form>
     </body>
 </html>
