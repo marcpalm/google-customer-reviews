@@ -10,7 +10,8 @@
                 console.log('click')
                 window.gapi.load('surveyoptin', function() {
                     document.getElementById('submit').on('click', (event) => {
-                        console.log('hi')
+                        const email = document.getElementById('email').value
+                        console.log('hi', email)
                         window.gapi.surveyoptin.render({
                             "merchant_id": 136160422,
                             "order_id": "1",
