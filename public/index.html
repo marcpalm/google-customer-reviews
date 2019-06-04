@@ -6,16 +6,18 @@
         <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
         <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
         <script>
-            const renderOptIn = () => () => {
+            window.renderOptIn = function() {
                 console.log('click')
                 window.gapi.load('surveyoptin', function() {
-                    window.gapi.surveyoptin.render({
-                        "merchant_id": 136160422,
-                        "order_id": "1",
-                        "email": "palmmarc85@gmail.com",
-                        "delivery_country": "DE",
-                        "estimated_delivery_date": new Date().toISOString().substring(0,10),
-                    });
+                    window.onFormSubmit = () => {
+                        window.gapi.surveyoptin.render({
+                            "merchant_id": 136160422,
+                            "order_id": "1",
+                            "email": "palmmarc85@gmail.com",
+                            "delivery_country": "DE",
+                            "estimated_delivery_date": new Date().toISOString().substring(0,10),
+                        });
+                    }
                 });
             }
         </script>
@@ -34,7 +36,7 @@
     <body>
         <form onSubmit>
             <input type="text" id="email" placeholder="Email" />
-            <input type="button" onclick="window.renderOptIn" value="submit" />
+            <input type="button" onclick="window.onFormSubmit" value="submit" />
         </form>
     </body>
 </html>
