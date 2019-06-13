@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Google Customer Reviews Example</title>
         <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
         <script src="https://apis.google.com/js/api.js?onload=renderOptIn" async defer></script>
@@ -30,7 +34,6 @@
             }
         </script>
         <!-- BEGIN GCR Language Code -->
-
         <script>
             window.___gcfg = {
 
@@ -38,13 +41,14 @@
 
             };
         </script>
-
-<!-- END GCR Language Code -->
+        <!-- END GCR Language Code -->
     </head>
     <body>
         <form onSubmit>
             <input type="text" id="email" placeholder="Email" />
             <input type="button" id="submit" value="submit" />
         </form>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
     </body>
 </html>
