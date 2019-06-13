@@ -8,31 +8,6 @@
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Google Customer Reviews Example</title>
         <meta name="google-site-verification" content="7Sk6QYyFfDJdC5jrn_XgHz4-qcO-miGoI-cz-VcSYQA" />
-        <script src="https://apis.google.com/js/api.js?onload=renderOptIn" async defer></script>
-        <script>
-            window.renderOptIn = function() {
-                console.log('click')
-                window.gapi.load('surveyoptin', function() {
-                    document.getElementById('submit').onclick = (event) => {
-                        const email = document.getElementById('email').value
-                        console.log('hi', email)
-
-                        if (!email || email.indexOf('@') === -1) {
-                            alert('Bitte richtige Email einfügen')
-                        } else {
-                            window.gapi.surveyoptin.render({
-                                "merchant_id": 136160422,
-                                "order_id": "1",
-                                "email": email,
-                                "delivery_country": "DE",
-                                "estimated_delivery_date": new Date().toISOString().substring(0,10),
-                            });
-                        }
-
-                    }
-                });
-            }
-        </script>
         <!-- BEGIN GCR Language Code -->
         <script>
             window.___gcfg = {
@@ -44,10 +19,6 @@
         <!-- END GCR Language Code -->
     </head>
     <body>
-        <form onSubmit>
-            <input type="text" id="email" placeholder="Email" />
-            <input type="button" id="submit" value="submit" />
-        </form>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
     </body>
